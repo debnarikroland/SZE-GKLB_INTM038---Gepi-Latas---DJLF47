@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
+using Emgu.CV.Features2D;
 using Emgu.CV.Stitching;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
@@ -16,13 +17,74 @@ namespace DJLF47___GKLB_INTM038___Stitching
 {
     public partial class Form1 : Form
     {
+        public AKAZE.DescriptorType descriptorTipus;
+        public KAZE.Diffusivity difuzivitasi;
+        int channelNumber = 3;
+        float treshold = 0.0001F;
+        
+
+        
+
         public Form1()
         {
             InitializeComponent();
+            descriptorTipus = AKAZE.DescriptorType.Mldb;
+            
+            label1.Text = "0.0001";
         }
 
         private void open_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(Convert.ToString(treshold));
+            if (KazeRadio.Checked)
+            {
+                descriptorTipus = AKAZE.DescriptorType.Kaze;
+            }
+            else if (KazeUpRadio.Checked)
+            {
+                descriptorTipus = AKAZE.DescriptorType.KazeUpright;
+            }
+            else if (MldbRadio.Checked)
+            {
+                descriptorTipus = AKAZE.DescriptorType.Mldb;
+            }
+            else if (MldbUpRadio.Checked)
+            {
+                descriptorTipus = AKAZE.DescriptorType.MldbUpright;
+            }
+
+
+            if (Channel1Radio.Checked)
+            {
+                channelNumber = 1;
+            }
+            else if (Channel2Radio.Checked)
+            {
+                channelNumber = 2;
+            }
+            else if (Channerl3Radio.Checked)
+            {
+                channelNumber = 3;
+            }
+
+            if (CharbonnierRadio.Checked)
+            {
+                difuzivitasi = KAZE.Diffusivity.Charbonnier;
+            }
+            else if (PmG1Radio.Checked)
+            {
+                difuzivitasi = KAZE.Diffusivity.PmG1;
+            }
+            else if (PmG2Radio.Checked)
+            {
+                difuzivitasi = KAZE.Diffusivity.PmG2;
+            }
+            else if(WeickerRadio.Checked)
+            {
+                difuzivitasi = KAZE.Diffusivity.Weickert;
+            }
+
+
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Multiselect = true;
             dlg.Filter = "jpg files (*.jpg)|*.jpg";
@@ -43,13 +105,31 @@ namespace DJLF47___GKLB_INTM038___Stitching
                 }
                 try
                 {
+                   
                     //0 - Panormáma; 1 - Szekkenlés
                     //true - Try GPU; false - No
                     using (Stitcher varras = new Stitcher(0, true))
                     {
-                        using (AKAZEFeaturesFinder kereso = new AKAZEFeaturesFinder(Emgu.CV.Features2D.AKAZE.DescriptorType.Mldb,0,3, 0.0001F,4,4,Emgu.CV.Features2D.KAZE.Diffusivity.PmG2))
+                        using (AKAZEFeaturesFinder kereso = new AKAZEFeaturesFinder(descriptorTipus, 0, channelNumber, treshold, 4, 4, difuzivitasi))
                         {
+                            varras.SetFeaturesFinder(kereso);
+                            using (VectorOfMat vm = new VectorOfMat())
+                            {
+                                Mat result = new Mat();
+                                vm.Push(forrasKepek);
 
+                                Stitcher.Status stitchStatus = varras.Stitch(vm, result);
+
+                                if (stitchStatus == Stitcher.Status.Ok)
+                                {
+                                    resultImage.Image = result;
+                                }
+                                else
+                                {
+                                    MessageBox.Show(this, String.Format("Stiching Error: {0}", stitchStatus));
+                                    resultImage.Image = null;
+                                }
+                            }
                         }
                     }
                 }
@@ -63,7 +143,13 @@ namespace DJLF47___GKLB_INTM038___Stitching
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            label1.Text = Convert.ToString(Convert.ToDecimal(trackBar1.Value)/100);
+            label1.Text = Convert.ToString(Convert.ToDouble(TresholdTrack.Value)/10000);
+            treshold =  (float)(Convert.ToDouble(TresholdTrack.Value) / 10000);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
