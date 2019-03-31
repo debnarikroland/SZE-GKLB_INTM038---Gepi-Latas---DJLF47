@@ -19,6 +19,7 @@ namespace DJLF47___GKLB_INTM038___Stitching
     {
         public AKAZE.DescriptorType descriptorTipus;
         public KAZE.Diffusivity difuzivitasi;
+        public Image<Bgr, byte> miniPicture;
         int channelNumber = 3;
         float treshold = 0.0001F;
         
@@ -52,6 +53,10 @@ namespace DJLF47___GKLB_INTM038___Stitching
             {
                 descriptorTipus = AKAZE.DescriptorType.MldbUpright;
             }
+            else
+            {
+                MldbRadio.Checked = true ;
+            }
 
 
             if (Channel1Radio.Checked)
@@ -65,6 +70,10 @@ namespace DJLF47___GKLB_INTM038___Stitching
             else if (Channerl3Radio.Checked)
             {
                 channelNumber = 3;
+            }
+            else
+            {
+                Channerl3Radio.Checked = true;
             }
 
             if (CharbonnierRadio.Checked)
@@ -82,6 +91,10 @@ namespace DJLF47___GKLB_INTM038___Stitching
             else if(WeickerRadio.Checked)
             {
                 difuzivitasi = KAZE.Diffusivity.Weickert;
+            }
+            else
+            {
+                PmG1Radio.Checked = true;
             }
 
 
@@ -103,9 +116,9 @@ namespace DJLF47___GKLB_INTM038___Stitching
                         sor.Height = 200;
                     }
                 }
+                miniPicture = null;
                 try
                 {
-                   
                     //0 - Panormáma; 1 - Szekkenlés
                     //true - Try GPU; false - No
                     using (Stitcher varras = new Stitcher(0, true))
@@ -117,12 +130,11 @@ namespace DJLF47___GKLB_INTM038___Stitching
                             {
                                 Mat result = new Mat();
                                 vm.Push(forrasKepek);
-
                                 Stitcher.Status stitchStatus = varras.Stitch(vm, result);
-
                                 if (stitchStatus == Stitcher.Status.Ok)
                                 {
                                     resultImage.Image = result;
+                                    forrasKepek = null;
                                 }
                                 else
                                 {
@@ -138,7 +150,6 @@ namespace DJLF47___GKLB_INTM038___Stitching
 
                 }
             }
-            
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
