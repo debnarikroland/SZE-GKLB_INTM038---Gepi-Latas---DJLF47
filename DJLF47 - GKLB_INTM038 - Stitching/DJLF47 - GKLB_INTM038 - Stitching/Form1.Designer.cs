@@ -51,6 +51,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.resultImage = new Emgu.CV.UI.ImageBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKepek)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,9 +64,10 @@
             // 
             // open
             // 
-            this.open.Location = new System.Drawing.Point(352, 409);
+            this.open.Location = new System.Drawing.Point(469, 525);
+            this.open.Margin = new System.Windows.Forms.Padding(4);
             this.open.Name = "open";
-            this.open.Size = new System.Drawing.Size(75, 23);
+            this.open.Size = new System.Drawing.Size(100, 28);
             this.open.TabIndex = 0;
             this.open.Text = "Open/Start";
             this.open.UseVisualStyleBackColor = true;
@@ -77,9 +81,10 @@
             this.View,
             this.FileName});
             this.dataGridViewKepek.Location = new System.Drawing.Point(0, 1);
+            this.dataGridViewKepek.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewKepek.Name = "dataGridViewKepek";
             this.dataGridViewKepek.ReadOnly = true;
-            this.dataGridViewKepek.Size = new System.Drawing.Size(622, 352);
+            this.dataGridViewKepek.Size = new System.Drawing.Size(829, 433);
             this.dataGridViewKepek.TabIndex = 0;
             // 
             // View
@@ -104,17 +109,19 @@
             this.panel1.Controls.Add(this.MldbRadio);
             this.panel1.Controls.Add(this.KazeUpRadio);
             this.panel1.Controls.Add(this.KazeRadio);
-            this.panel1.Location = new System.Drawing.Point(0, 359);
+            this.panel1.Location = new System.Drawing.Point(0, 465);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(108, 125);
+            this.panel1.Size = new System.Drawing.Size(143, 153);
             this.panel1.TabIndex = 5;
             // 
             // MldbUpRadio
             // 
             this.MldbUpRadio.AutoSize = true;
-            this.MldbUpRadio.Location = new System.Drawing.Point(16, 88);
+            this.MldbUpRadio.Location = new System.Drawing.Point(21, 108);
+            this.MldbUpRadio.Margin = new System.Windows.Forms.Padding(4);
             this.MldbUpRadio.Name = "MldbUpRadio";
-            this.MldbUpRadio.Size = new System.Drawing.Size(82, 17);
+            this.MldbUpRadio.Size = new System.Drawing.Size(105, 21);
             this.MldbUpRadio.TabIndex = 3;
             this.MldbUpRadio.TabStop = true;
             this.MldbUpRadio.Text = "MldbUpright";
@@ -123,9 +130,10 @@
             // MldbRadio
             // 
             this.MldbRadio.AutoSize = true;
-            this.MldbRadio.Location = new System.Drawing.Point(16, 64);
+            this.MldbRadio.Location = new System.Drawing.Point(21, 79);
+            this.MldbRadio.Margin = new System.Windows.Forms.Padding(4);
             this.MldbRadio.Name = "MldbRadio";
-            this.MldbRadio.Size = new System.Drawing.Size(48, 17);
+            this.MldbRadio.Size = new System.Drawing.Size(59, 21);
             this.MldbRadio.TabIndex = 2;
             this.MldbRadio.TabStop = true;
             this.MldbRadio.Text = "Mldb";
@@ -134,9 +142,10 @@
             // KazeUpRadio
             // 
             this.KazeUpRadio.AutoSize = true;
-            this.KazeUpRadio.Location = new System.Drawing.Point(15, 41);
+            this.KazeUpRadio.Location = new System.Drawing.Point(20, 50);
+            this.KazeUpRadio.Margin = new System.Windows.Forms.Padding(4);
             this.KazeUpRadio.Name = "KazeUpRadio";
-            this.KazeUpRadio.Size = new System.Drawing.Size(83, 17);
+            this.KazeUpRadio.Size = new System.Drawing.Size(107, 21);
             this.KazeUpRadio.TabIndex = 1;
             this.KazeUpRadio.TabStop = true;
             this.KazeUpRadio.Text = "KazeUpright";
@@ -145,9 +154,10 @@
             // KazeRadio
             // 
             this.KazeRadio.AutoSize = true;
-            this.KazeRadio.Location = new System.Drawing.Point(15, 16);
+            this.KazeRadio.Location = new System.Drawing.Point(20, 20);
+            this.KazeRadio.Margin = new System.Windows.Forms.Padding(4);
             this.KazeRadio.Name = "KazeRadio";
-            this.KazeRadio.Size = new System.Drawing.Size(49, 17);
+            this.KazeRadio.Size = new System.Drawing.Size(61, 21);
             this.KazeRadio.TabIndex = 0;
             this.KazeRadio.TabStop = true;
             this.KazeRadio.Text = "Kaze";
@@ -157,9 +167,10 @@
             // Channel1Radio
             // 
             this.Channel1Radio.AutoSize = true;
-            this.Channel1Radio.Location = new System.Drawing.Point(4, 16);
+            this.Channel1Radio.Location = new System.Drawing.Point(5, 20);
+            this.Channel1Radio.Margin = new System.Windows.Forms.Padding(4);
             this.Channel1Radio.Name = "Channel1Radio";
-            this.Channel1Radio.Size = new System.Drawing.Size(72, 17);
+            this.Channel1Radio.Size = new System.Drawing.Size(91, 21);
             this.Channel1Radio.TabIndex = 6;
             this.Channel1Radio.TabStop = true;
             this.Channel1Radio.Text = "1 channel";
@@ -171,17 +182,19 @@
             this.panel2.Controls.Add(this.Channerl3Radio);
             this.panel2.Controls.Add(this.Channel1Radio);
             this.panel2.Controls.Add(this.Channel2Radio);
-            this.panel2.Location = new System.Drawing.Point(114, 359);
+            this.panel2.Location = new System.Drawing.Point(152, 466);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(86, 125);
+            this.panel2.Size = new System.Drawing.Size(114, 153);
             this.panel2.TabIndex = 7;
             // 
             // Channerl3Radio
             // 
             this.Channerl3Radio.AutoSize = true;
-            this.Channerl3Radio.Location = new System.Drawing.Point(3, 82);
+            this.Channerl3Radio.Location = new System.Drawing.Point(4, 101);
+            this.Channerl3Radio.Margin = new System.Windows.Forms.Padding(4);
             this.Channerl3Radio.Name = "Channerl3Radio";
-            this.Channerl3Radio.Size = new System.Drawing.Size(72, 17);
+            this.Channerl3Radio.Size = new System.Drawing.Size(91, 21);
             this.Channerl3Radio.TabIndex = 1;
             this.Channerl3Radio.TabStop = true;
             this.Channerl3Radio.Text = "3 channel";
@@ -190,9 +203,10 @@
             // Channel2Radio
             // 
             this.Channel2Radio.AutoSize = true;
-            this.Channel2Radio.Location = new System.Drawing.Point(4, 49);
+            this.Channel2Radio.Location = new System.Drawing.Point(5, 60);
+            this.Channel2Radio.Margin = new System.Windows.Forms.Padding(4);
             this.Channel2Radio.Name = "Channel2Radio";
-            this.Channel2Radio.Size = new System.Drawing.Size(72, 17);
+            this.Channel2Radio.Size = new System.Drawing.Size(91, 21);
             this.Channel2Radio.TabIndex = 0;
             this.Channel2Radio.TabStop = true;
             this.Channel2Radio.Text = "2 channel";
@@ -201,10 +215,11 @@
             // TresholdTrack
             // 
             this.TresholdTrack.LargeChange = 1;
-            this.TresholdTrack.Location = new System.Drawing.Point(12, 531);
-            this.TresholdTrack.Maximum = 10000;
+            this.TresholdTrack.Location = new System.Drawing.Point(16, 672);
+            this.TresholdTrack.Margin = new System.Windows.Forms.Padding(4);
+            this.TresholdTrack.Maximum = 1000;
             this.TresholdTrack.Name = "TresholdTrack";
-            this.TresholdTrack.Size = new System.Drawing.Size(568, 45);
+            this.TresholdTrack.Size = new System.Drawing.Size(757, 56);
             this.TresholdTrack.TabIndex = 8;
             this.TresholdTrack.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
@@ -215,17 +230,19 @@
             this.panel3.Controls.Add(this.PmG2Radio);
             this.panel3.Controls.Add(this.PmG1Radio);
             this.panel3.Controls.Add(this.CharbonnierRadio);
-            this.panel3.Location = new System.Drawing.Point(206, 359);
+            this.panel3.Location = new System.Drawing.Point(275, 466);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(116, 125);
+            this.panel3.Size = new System.Drawing.Size(154, 153);
             this.panel3.TabIndex = 9;
             // 
             // WeickerRadio
             // 
             this.WeickerRadio.AutoSize = true;
-            this.WeickerRadio.Location = new System.Drawing.Point(21, 97);
+            this.WeickerRadio.Location = new System.Drawing.Point(28, 119);
+            this.WeickerRadio.Margin = new System.Windows.Forms.Padding(4);
             this.WeickerRadio.Name = "WeickerRadio";
-            this.WeickerRadio.Size = new System.Drawing.Size(65, 17);
+            this.WeickerRadio.Size = new System.Drawing.Size(80, 21);
             this.WeickerRadio.TabIndex = 3;
             this.WeickerRadio.TabStop = true;
             this.WeickerRadio.Text = "Weicker";
@@ -234,9 +251,10 @@
             // PmG2Radio
             // 
             this.PmG2Radio.AutoSize = true;
-            this.PmG2Radio.Location = new System.Drawing.Point(21, 69);
+            this.PmG2Radio.Location = new System.Drawing.Point(28, 85);
+            this.PmG2Radio.Margin = new System.Windows.Forms.Padding(4);
             this.PmG2Radio.Name = "PmG2Radio";
-            this.PmG2Radio.Size = new System.Drawing.Size(54, 17);
+            this.PmG2Radio.Size = new System.Drawing.Size(68, 21);
             this.PmG2Radio.TabIndex = 2;
             this.PmG2Radio.TabStop = true;
             this.PmG2Radio.Text = "PmG2";
@@ -245,9 +263,10 @@
             // PmG1Radio
             // 
             this.PmG1Radio.AutoSize = true;
-            this.PmG1Radio.Location = new System.Drawing.Point(21, 41);
+            this.PmG1Radio.Location = new System.Drawing.Point(28, 50);
+            this.PmG1Radio.Margin = new System.Windows.Forms.Padding(4);
             this.PmG1Radio.Name = "PmG1Radio";
-            this.PmG1Radio.Size = new System.Drawing.Size(54, 17);
+            this.PmG1Radio.Size = new System.Drawing.Size(68, 21);
             this.PmG1Radio.TabIndex = 1;
             this.PmG1Radio.TabStop = true;
             this.PmG1Radio.Text = "PmG1";
@@ -256,9 +275,10 @@
             // CharbonnierRadio
             // 
             this.CharbonnierRadio.AutoSize = true;
-            this.CharbonnierRadio.Location = new System.Drawing.Point(21, 16);
+            this.CharbonnierRadio.Location = new System.Drawing.Point(28, 20);
+            this.CharbonnierRadio.Margin = new System.Windows.Forms.Padding(4);
             this.CharbonnierRadio.Name = "CharbonnierRadio";
-            this.CharbonnierRadio.Size = new System.Drawing.Size(82, 17);
+            this.CharbonnierRadio.Size = new System.Drawing.Size(107, 21);
             this.CharbonnierRadio.TabIndex = 0;
             this.CharbonnierRadio.TabStop = true;
             this.CharbonnierRadio.Text = "Charbonnier";
@@ -267,34 +287,67 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 503);
+            this.label1.Location = new System.Drawing.Point(137, 635);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 503);
+            this.label2.Location = new System.Drawing.Point(65, 636);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Treshold:";
             // 
             // resultImage
             // 
-            this.resultImage.Location = new System.Drawing.Point(619, 1);
+            this.resultImage.Location = new System.Drawing.Point(825, 1);
+            this.resultImage.Margin = new System.Windows.Forms.Padding(4);
             this.resultImage.Name = "resultImage";
-            this.resultImage.Size = new System.Drawing.Size(756, 575);
+            this.resultImage.Size = new System.Drawing.Size(1008, 708);
             this.resultImage.TabIndex = 2;
             this.resultImage.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 444);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Leíró tipusa";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(153, 445);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Csatornák száma";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(304, 445);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Diffuzivitási";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 579);
+            this.ClientSize = new System.Drawing.Size(1839, 713);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.resultImage);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -304,6 +357,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewKepek);
             this.Controls.Add(this.open);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "DJLF47 - Stitching";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKepek)).EndInit();
@@ -344,6 +398,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Emgu.CV.UI.ImageBox resultImage;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
