@@ -36,7 +36,7 @@ namespace DJLF47___GKLB_INTM038___Stitching
 
         private void open_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Convert.ToString(treshold));
+            //MessageBox.Show(Convert.ToString(treshold));
             if (KazeRadio.Checked)
             {
                 descriptorTipus = AKAZE.DescriptorType.Kaze;
